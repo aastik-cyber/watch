@@ -11,7 +11,19 @@ import { generatePacket, updateAnalytics } from './lib/packetSimulator';
 function App() {
   const [isActive, setIsActive] = useState(true);
   const [packetCount, setPacketCount] = useState(0);
+  // Inside the App function, before the existing useEffect
+useEffect(() => {
+  const fetchInitialCount = async () => {
+    // This asks Supabase for the total number of rows in the 'packets' table
+    const { count } = await supabase
+      .from('packets')
+      .select('*', { count: 'exact', head: true });
+    
+    if (count !== null) setPacketCount(count);
+  };
 
+  fetchInitialCount();
+}, []);
   useEffect(() => {
     if (!isActive) return;
 
