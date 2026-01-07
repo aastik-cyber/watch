@@ -89,6 +89,21 @@ function App() {
           </div>
         </div>
       </main>
+      <footer className="bg-gray-900 border-t border-gray-800 mt-12">
+  <div className="max-w-[1920px] mx-auto px-6 py-4">
+    <div className="flex items-center justify-between text-sm text-gray-500">
+      <div className="flex items-center gap-2">
+        <Activity className="w-4 h-4" />
+        <span>Packets Captured: {packetCount.toLocaleString()}</span>
+      </div>
+      {/* Add your name here */}
+      <div className="flex items-center gap-4">
+        <span>ThreatWatch SOC v1.0</span>
+        <span className="text-blue-400 font-medium">Made by Aastik</span>
+      </div>
+    </div>
+  </div>
+</footer>
 
       <footer className="bg-gray-900 border-t border-gray-800 mt-12">
         <div className="max-w-[1920px] mx-auto px-6 py-4">
