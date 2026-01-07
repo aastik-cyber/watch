@@ -154,6 +154,22 @@ export async function exportThreatDataToPDF() {
     addText(`   Time: ${new Date(packet.captured_at).toLocaleString()}`, { size: 8 });
     yPosition += 2;
   });
+  export const exportToPDF = (packets: any[], threats: any[]) => {
+  const doc = new jsPDF();
+  const timestamp = format(new Date(), 'yyyy-MM-dd HH:mm:ss');
+
+  // Header
+  doc.setFontSize(20);
+  doc.setTextColor(220, 38, 38); // Red color
+  doc.text('ThreatWatch SOC Report', 14, 22);
+  
+  // ADD YOUR NAME HERE
+  doc.setFontSize(10);
+  doc.setTextColor(100, 100, 100);
+  doc.text(`Generated on: ${timestamp} | Made by Aastik`, 14, 30);
+
+  // ... rest of your existing code ...
+};
 
   addText('STATISTICS & ANALYSIS', { size: 14, bold: true, color: [30, 58, 138] });
   addText(`Report Generated: ${new Date().toLocaleString()}`, { size: 9 });
