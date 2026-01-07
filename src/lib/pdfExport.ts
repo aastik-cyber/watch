@@ -7,6 +7,19 @@ export async function exportThreatDataToPDF() {
     unit: 'mm',
     format: 'a4'
   });
+  // ... existing code above ...
+
+  // Header
+  doc.setFontSize(20);
+  doc.setTextColor(220, 38, 38); 
+  doc.text('ThreatWatch SOC Report', 14, 22); // This is roughly Line 10
+  
+  // PASTE THESE TWO LINES HERE:
+  doc.setFontSize(10);
+  doc.setTextColor(100, 100, 100);
+  doc.text(`Generated on: ${timestamp} | Made by Aastik`, 14, 30);
+
+// ... rest of the code continues below ...
 
   const pageWidth = doc.internal.pageSize.getWidth();
   const pageHeight = doc.internal.pageSize.getHeight();
