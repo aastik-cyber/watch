@@ -29,7 +29,7 @@ export default function PacketFeed() {
       .from('packets')
       .select('*')
       .order('captured_at', { ascending: false })
-      .limit(50);
+      .limit(5000);
 
     if (data) setPackets(data);
   };
